@@ -1,0 +1,118 @@
+/* Imports & supports */
+@import url("https://rsms.me/inter/inter-ui.css");
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding-inline: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 2. Vamos a crear 3 animaciones distintas, 1 para animar el background del banner, otra para animar el título y la tercera para animar el parrafo */
+.banner{
+  height:60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+  transition: all 500ms ease-in;
+  animation: introdos 2s infinite;
+}
+
+.banner:hover{
+  opacity:0.5;
+}
+
+.banner h1{
+color: deeppink;
+font-size:150px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+animation: intro 2s infinite;
+}
+
+@keyframes intro{
+0%{opacity:0; }
+50%{opacity:1; }
+100%{opacity:0; }
+}
+
+@keyframes introdos{
+from{
+  transform: scale(1.5);
+}
+to{}
+}
+
+@keyframes intro{
+0% {
+  transform: translateY(60vh);
+  color:yellow;
+}
+100%{
+transform:translateY(0);
+color:deeppink;
+}
+}
+
+
+
+.banner p{
+  text-align:right;
+  padding-left: 190px;
+  padding-right: 50px;
+  font-size: 20px;
+  color:deeppink;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: intro 2s infinite;
+  /* animation: introdos 500ms infinite; */
+}
+
+
+@keyframes introdos{
+0% {
+  background-color: white;
+}
+100%{
+  background-color:yellow;
+}
+}
